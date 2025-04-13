@@ -14,7 +14,8 @@ COPY pom.xml .
 # Copy source code
 COPY src src
 
-# Build the application
+# Make the Maven wrapper executable and build the application
+RUN chmod +x ./mvnw
 RUN ./mvnw package -DskipTests
 # If using Gradle, uncomment this instead
 # RUN chmod +x ./gradlew && ./gradlew build -x test
